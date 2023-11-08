@@ -1,7 +1,9 @@
 const currencyWidget = document.querySelector(".currency-widget");
 
-const coinId = "ethereum";
+const coinId = currencyWidget.dataset.coin;
+console.log("coinId", coinId);
 const fetchCoinDetails = async (coinId) => {
+  console.log("coinId", coinId);
   const response = await fetch(
     `https://api.coingecko.com/api/v3/coins/${coinId}`
   );
@@ -35,7 +37,7 @@ const currencyFormat = (number) => {
 };
 
 const precentageFormat = (number) => {
-  console.log("number", typeof number);
+  // console.log("number", typeof number);
   var formattedValue = Number(number / 100).toLocaleString(undefined, {
     style: "percent",
     minimumFractionDigits: 2,
@@ -57,7 +59,7 @@ const numberFormat = (number) => {
 
 const displayWidget = async () => {
   const coinData = await fetchCoinDetails(coinId);
-  console.log(coinData);
+  // console.log(coinData);
   const cardDiv = document.createElement("div");
   cardDiv.innerHTML = `<div style="display:flex;flex-direction:column;width:100%;border:0.1rem solid #e1e5ea;border-radius:0.4rem;font-family: 'Inter', sans-serif;"><div style="display:flex;justify-content: space-evenly; border-bottom: 0.1rem solid  #e1e5ea"><img src="${
     coinData.image.small

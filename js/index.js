@@ -1,5 +1,7 @@
 const coinOptions = document.getElementById("coinSelect");
 const widgetCode = document.getElementById("widgetCode");
+// const currencyWidget = document.getElementById("currencyWidget");
+
 const apiUrl = "https://api.coingecko.com/api/v3/coins/";
 
 const fetchCoinList = async () => {
@@ -29,6 +31,9 @@ const createCoinList = async () => {
 
 const handleSelect = () => {
   console.log(coinOptions.value);
+  currencyWidget.setAttribute("data-coin", coinOptions.value);
+  console.log(currencyWidget.dataset.coin);
+  widgetCode.value = `<div  class="currency-widget"  data-coin=${coinOptions.value}></div><script src="https://tomkjose.github.io/Crypto-Tracker-Widget/js/widget.js"></script>`;
 };
 
 createCoinList();
