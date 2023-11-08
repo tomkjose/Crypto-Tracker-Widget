@@ -49,8 +49,9 @@ main {
 .widget-code textarea {
   border: none;
   resize: none;
-  overflow: none;
+  overflow: hidden;
   width: 100%;
+  height: auto;
 }
 
 .widget-code textarea:focus {
