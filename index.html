@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Ticker Widget</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/f6545ee271.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="form">
+          <select name="option" id="coinSelect" onchange="handleSelect()">
+            <option value="">Select Coin</option>
+          </select>
+        </div>
+        <div class="widget-code">
+          <textarea id="widgetCode" readonly>
+            <div class="currency-widget"></div>
+            <script src="./js/widget.js"></script>
+          </textarea>
+          <button class="copy-button" onclick="copyToClipboard()">
+            <i class="fa-solid fa-copy fa-lg" style="color: #8c8c8c"></i>
+          </button>
+        </div>
+      </div>
+      <div class="widget-preview">
+        <div class="currency-widget"></div>
+        <script src="./js/widget.js"></script>
+      </div>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

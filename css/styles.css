@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "segoe ui", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+main {
+  display: flex;
+  width: 70%;
+  margin: 2rem auto;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0.4rem;
+  padding: 1.4rem;
+}
+
+.widget-preview {
+  width: 50%;
+}
+
+.container {
+  width: 50%;
+  margin: 0 1.4rem;
+}
+
+.form {
+  width: 100%;
+}
+
+#coinSelect {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid #e1e5ea;
+  font-size: 1.2rem;
+}
+
+.widget-code {
+  display: flex;
+  width: 100%;
+  border: 0.1rem solid #e1e5ea;
+  border-radius: 0.2rem;
+  height: 4.2rem;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+}
+
+.widget-code textarea {
+  border: none;
+  resize: none;
+  overflow: none;
+  width: 100%;
+}
+
+.widget-code textarea:focus {
+  outline: none;
+}
+
+.copy-button {
+  border: none;
+  background-color: inherit;
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
