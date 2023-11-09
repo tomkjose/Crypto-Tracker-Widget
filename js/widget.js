@@ -1,9 +1,7 @@
 const currencyWidget = document.querySelector(".currency-widget");
 
 const coinId = currencyWidget.dataset.coin;
-console.log("coinId", coinId);
 const fetchCoinDetails = async (coinId) => {
-  console.log("coinId", coinId);
   const response = await fetch(
     `https://api.coingecko.com/api/v3/coins/${coinId}`
   );
