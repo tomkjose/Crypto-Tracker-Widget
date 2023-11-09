@@ -32,7 +32,8 @@ const createCoinList = async () => {
 const handleSelect = () => {
   console.log(coinOptions.value);
   currencyWidget.setAttribute("data-coin", coinOptions.value);
-  console.log(currencyWidget.dataset.coin);
+  // fetchCoinDetails(coinOptions.value);
+  // displayWidget();
   widgetCode.value = `<div  class="currency-widget"  data-coin=${coinOptions.value}></div><script src="https://tomkjose.github.io/Crypto-Tracker-Widget/js/widget.js"></script>`;
 };
 

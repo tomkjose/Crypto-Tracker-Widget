@@ -59,7 +59,7 @@ const numberFormat = (number) => {
 
 const displayWidget = async () => {
   const coinData = await fetchCoinDetails(coinId);
-  // console.log(coinData);
+  console.log("called display");
   const cardDiv = document.createElement("div");
   cardDiv.innerHTML = `<div style="display:flex;flex-direction:column;width:100%;border:0.1rem solid #e1e5ea;border-radius:0.4rem;font-family: 'Inter', sans-serif;"><div style="display:flex;justify-content: space-evenly; border-bottom: 0.1rem solid  #e1e5ea"><img src="${
     coinData.image.small
@@ -71,10 +71,10 @@ const displayWidget = async () => {
   <div><span style="font-weight:700;font-size:1.2rem;padding-top:1rem"> ${currencyFormat(
     coinData.market_data.current_price.usd
   )} <span style="font-size:0.8rem;font-weight:7500">USD</span></span><span style=color:${
-    coinData.market_data.price_change_percentage_24h_in_currency > 0
+    coinData.market_data.price_change_percentage_24h_in_currency.usd > 0
       ? "green"
       : "red"
-  }>( ${precentageFormat(
+  }> ( ${precentageFormat(
     coinData.market_data.price_change_percentage_24h_in_currency.usd
   )})</span></div></div>
   </div><div  style="display:flex;justify-content:space-evenly;padding-top:0.6rem;padding-bottom:0.6rem;"><div style="display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;width:100%"><div>RANK</div><div style="padding-top:1rem;font-size:1.2rem">${
@@ -91,6 +91,7 @@ const displayWidget = async () => {
   } </div></div><div  style="display:flex;flex-direction:column;justify-content:space-evenly;align-items:center;width:100%"><div>TOTAL SUPPLY</div> <div style="padding-top:1rem;font-size:1.2rem">${numberFormat(
     coinData.market_data.total_supply
   )}<span> ${coinData.symbol.toUpperCase()}</span> </div></div></div><div style="text-align:center;padding:1rem;border-top:0.1rem solid #e1e5ea"><em style="color:#3861FB;font-size:0.6rem;">powered by Plena Finance</em></div></div></div>`;
+  currencyWidget.innerHTML = "";
   currencyWidget.appendChild(cardDiv);
 };
 displayWidget();
