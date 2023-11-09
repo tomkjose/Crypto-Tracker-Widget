@@ -57,7 +57,7 @@ const numberFormat = (number) => {
   }
 };
 
-const displayWidget = async () => {
+const displayWidget = async (coinId) => {
   const coinData = await fetchCoinDetails(coinId);
   console.log("called display");
   const cardDiv = document.createElement("div");
@@ -94,4 +94,4 @@ const displayWidget = async () => {
   currencyWidget.innerHTML = "";
   currencyWidget.appendChild(cardDiv);
 };
-displayWidget();
+displayWidget(coinId);
